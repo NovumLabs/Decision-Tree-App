@@ -1,43 +1,209 @@
-# Novum Labs — Novum Labs Advanced Decision Tree AI
+\# Novum Labs Decision Tree AI
 
-Two-stage development workspace for the Novum Labs repository:
-https://github.com/NovumLabs/Decision-Tree-App
 
-This workspace is designed to help Shreya (B.Tech fresher) progress from a mathematically grounded Decision Tree implementation to a tested, explainable, deployable AI application.
 
-## Stage 1 — Core algorithm and mathematical foundations (Weeks 1–6)
-1. Python, NumPy, pandas, testing and Git workflow review.
-2. Entropy, Gini impurity, information gain, variance reduction and split criteria.
-3. Implement classification and regression trees from scratch.
-4. Add stopping conditions, prediction, tree inspection and reproducible tests.
-5. Compare results against scikit-learn baselines; record accuracy, F1, MAE/RMSE and runtime.
-6. Deliver a Stage 1 review with mathematical notes, examples, test results and known limitations.
+\*\*Version:\*\* 0.2.0
 
-## Stage 2 — Advanced features and application (Weeks 7–14)
-1. Pre-pruning and post-pruning; evaluate overfitting and generalization.
-2. Handle missing values, categorical features, class weights and imbalanced data.
-3. Explore bagging and Random Forest as extensions (keep the single-tree engine independently testable).
-4. Add explainability: decision paths, human-readable rules, feature importance and tree visualization.
-5. Build a FastAPI backend and a React + TypeScript interface if the existing repository architecture supports them.
-6. Add packaging, Docker, CI, documentation, examples and a release checklist.
+\*\*Organization:\*\* Novum Labs Pvt. Limited
 
-## Suggested first steps
-1. Review the existing GitHub repository and preserve working code before moving files.
-2. Create a branch: `feature/stage-1-core-engine`.
-3. Set up the environment: `python -m venv .venv` and install `requirements-dev.txt`.
-4. Run tests: `pytest`.
-5. Implement and test impurity criteria before implementing tree growth.
+\*\*Repository:\*\* https://github.com/NovumLabs/Decision-Tree-App
 
-## Project layout
-- `docs/`: mathematics, algorithm design, roadmap, experiments and API notes.
-- `src/decision_tree_ai/`: Python package for the engine.
-- `tests/`: unit, regression and integration tests.
-- `examples/`: classification and regression examples.
-- `app/backend/`: API starter.
-- `app/frontend/`: frontend planning notes.
-- `deployment/`: Docker starter.
 
-## Important status note
-This is a **starter workspace**, not a finished Decision Tree engine and not a verified copy of the live GitHub repository. The repository URL could not be fully inspected in this run. Compare this structure with the current repository before merging; adapt rather than overwrite existing work.
 
-Maintained for **Novum Labs Pvt. Limited**.
+An educational, mathematically grounded Python project for developing an explainable Decision Tree machine-learning engine from first principles.
+
+
+
+\## Division I — Mathematical Criteria Foundation
+
+
+
+Division I establishes the mathematical criteria and testing foundation required for further Decision Tree development.
+
+
+
+\### Implemented and tested
+
+
+
+\- \*\*Entropy:\*\* measures uncertainty in a class distribution.
+
+\- \*\*Gini Impurity:\*\* measures class impurity.
+
+\- \*\*Information Gain:\*\* measures the reduction in entropy produced by a split.
+
+\- \*\*Numeric split support:\*\* an initial step toward selecting useful splits.
+
+\- \*\*Input validation:\*\* tests cover invalid probability distributions, empty inputs, and invalid group sizes.
+
+\- \*\*Automated testing:\*\* the current unit test suite contains 28 passing tests.
+
+
+
+These results describe the current tested implementation. They do not mean that the complete Decision Tree engine or application is finished.
+
+
+
+\## Mathematical Foundation
+
+
+
+For class probabilities \\(p\_1, p\_2, \\ldots, p\_k\\), entropy is defined as:
+
+
+
+\\\[
+
+H(S)=-\\sum\_{i=1}^{k}p\_i\\log\_2(p\_i)
+
+\\]
+
+
+
+Gini Impurity is defined as:
+
+
+
+\\\[
+
+G(S)=1-\\sum\_{i=1}^{k}p\_i^2
+
+\\]
+
+
+
+For a parent dataset \\(S\\) divided into child groups \\(S\_j\\), Information Gain is:
+
+
+
+\\\[
+
+IG(S)=H(S)-\\sum\_j\\frac{|S\_j|}{|S|}H(S\_j)
+
+\\]
+
+
+
+These criteria help evaluate the quality of candidate splits during Decision Tree construction.
+
+
+
+\## Development Roadmap
+
+
+
+\### Division I — Mathematical Criteria Foundation
+
+
+
+\- Implement and test impurity criteria.
+
+\- Validate probability distributions and edge cases.
+
+\- Develop and test split-selection functionality.
+
+\- Document mathematical definitions, examples, and limitations.
+
+
+
+\### Division II — Decision Tree Engine
+
+
+
+\- Develop classification and regression trees from scratch.
+
+\- Add stopping conditions and prediction.
+
+\- Add tree inspection and reproducible examples.
+
+\- Compare results against appropriate scikit-learn baselines.
+
+
+
+\### Division III — Advanced Features
+
+
+
+\- Investigate pre-pruning and post-pruning.
+
+\- Handle missing values, categorical features, class weights, and imbalanced datasets.
+
+\- Explore Random Forest as an extension.
+
+\- Develop decision paths, human-readable rules, feature importance, and tree visualization.
+
+
+
+\### Division IV — Application and Delivery
+
+
+
+\- Evaluate a FastAPI backend and React with TypeScript frontend.
+
+\- Improve packaging, documentation, examples, and deployment.
+
+\- Introduce continuous integration and a release checklist.
+
+
+
+Divisions II–IV represent planned development, not claims of completed functionality.
+
+
+
+\## Testing
+
+
+
+Run the unit test suite from the project root:
+
+
+
+```powershell
+
+.\\.venv\\Scripts\\python.exe -m pytest -v
+
+```
+
+
+
+At the time of preparing this release, the suite has \*\*28 passing tests\*\*. Run the command again to verify the result in your environment.
+
+
+
+\## Technology
+
+
+
+\- Python 3.10 or later
+
+\- NumPy
+
+\- pandas
+
+\- pytest
+
+\- scikit-learn, Jupyter, matplotlib, and Ruff as development extras
+
+
+
+\## Project Status
+
+
+
+\*\*Release:\*\* v0.2.0 — Division I: Mathematical Criteria Foundation
+
+
+
+This is an actively developed educational machine-learning project. The current release focuses on mathematical criteria, initial split-selection functionality, and automated tests. A complete production-ready Decision Tree application remains a future goal.
+
+
+
+\## Maintained by
+
+
+
+\*\*Novum Labs Pvt. Limited\*\*
+
+
+
+Technology for a Better World.
