@@ -40,3 +40,35 @@ def test_information_gain_rejects_zero_size_group():
             [0.5, 0.5],
             [(0, [0.5, 0.5])],
         )
+
+def test_information_gain_rejects_invalid_parent_probabilities():
+    with pytest.raises(ValueError):
+        information_gain([0.7, 0.5], [(10, [0.5, 0.5])])
+
+
+def test_information_gain_rejects_invalid_child_probabilities():
+    with pytest.raises(ValueError):
+        information_gain(
+            [0.5, 0.5],
+            [(10, [0.7, 0.5])],
+        )
+
+
+def test_information_gain_rejects_negative_group_size():
+    with pytest.raises(ValueError, match="positive"):
+        information_gain(
+            [0.5, 0.5],
+            [(-1, [0.5, 0.5])],
+        )
+
+
+def test_information_gain_accepts_multiple_child_groups():
+    gain = information_gain(
+        [0.5, 0.5],
+        [
+            (4, [1.0, 0.0]),
+            (6, [0.0, 1.0]),
+        ],
+    )
+
+    assert math.isclose(gain, 1.0)
